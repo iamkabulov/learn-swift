@@ -114,3 +114,22 @@ findFirstEvenNumb.first { $0 % 2 == 0 }
 
 let findFirstPositiveDouble = [-2.5, 0.8, -1.2, 3.5, -4.0]
 findFirstPositiveDouble.first { $0 > 0 }
+
+
+//MARK: - Game over массив из 5 элементов через reduce получить сумму всех фруктов
+
+struct AppleAndPineapple {
+   let applesCount: Int
+   let pineapple: Int
+}
+
+let fruits1 = AppleAndPineapple(applesCount: 2, pineapple: 3)
+let fruits2 = AppleAndPineapple(applesCount: 1, pineapple: 5)
+let fruits3 = AppleAndPineapple(applesCount: 2, pineapple: 2)
+let fruits4 = AppleAndPineapple(applesCount: 3, pineapple: 1)
+let fruits5 = AppleAndPineapple(applesCount: 5, pineapple: 5)
+
+let fruitBasket = [fruits1, fruits2, fruits3, fruits4, fruits5]
+fruitBasket.reduce(0) { result, fruit in
+	result + fruit.applesCount + fruit.pineapple
+}
